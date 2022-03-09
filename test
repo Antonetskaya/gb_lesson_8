@@ -1,0 +1,33 @@
+"""4. Начните работу над проектом «Склад оргтехники». Создайте класс, описывающий склад.
+А также класс «Оргтехника», который будет базовым для классов-наследников.
+Эти классы — конкретные типы оргтехники (принтер, сканер, ксерокс). В базовом классе определить параметры, общие для приведенных типов.
+В классах-наследниках реализовать параметры, уникальные для каждого типа оргтехники."""
+
+class Sklad:
+    naimenovanie = str
+    proizvoditel = str
+    model = str
+
+
+class Orgtehnika:
+    id = int
+    naimenovanie = str
+    proizvoditel = str
+    model = str
+    format_bum = str
+    cena = float
+    zakup_cena = float
+
+class Printer(Orgtehnika):
+    sposob_pechati = str #лазерный или струйный
+    cvet_pуchat = bool # есть или нет цветная печать
+
+class Scaner(Orgtehnika):
+    tip_scanera = str
+    razreshenie = str
+
+
+class Xerox(Orgtehnika):
+    razreshenie = str
+    duplex = bool   # есть /нет двустроннее копирование
+
