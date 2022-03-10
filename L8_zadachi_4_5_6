@@ -1,0 +1,53 @@
+"""4. Начните работу над проектом «Склад оргтехники». Создайте класс, описывающий склад.
+А также класс «Оргтехника», который будет базовым для классов-наследников.
+Эти классы — конкретные типы оргтехники (принтер, сканер, ксерокс). В базовом классе определить параметры, общие для приведенных типов.
+В классах-наследниках реализовать параметры, уникальные для каждого типа оргтехники."""
+
+"""4. Начните работу над проектом «Склад оргтехники». Создайте класс, описывающий склад.
+А также класс «Оргтехника», который будет базовым для классов-наследников.
+Эти классы — конкретные типы оргтехники (принтер, сканер, ксерокс). В базовом классе определить параметры, общие для приведенных типов.
+В классах-наследниках реализовать параметры, уникальные для каждого типа оргтехники."""
+
+class Sklad:
+
+
+
+class Orgtehnika:
+    naimenovanie: str
+    proizvoditel: str
+    model: str
+    cena: float
+    kolichestvo: int = 0
+
+    def __init__(self, naimenovanie, proizvoditel, model, cena, kolichestvo):
+        self.naimenovanie = naimenovanie
+        self.proizvoditel = proizvoditel
+        self.model = model
+        self.cena = cena
+        self.kolichestvo = kolichestvo
+
+class Printer(Orgtehnika):
+    sposob_pechati: str #лазерный или струйный
+    cvet_pуchat: str # ч/б или цветная печать
+
+    def __init__(self, naimenovanie, proizvoditel, model, cena, kolichestvo, sposob_pechati, cvet_pуchat):
+        super().__init__(naimenovanie, proizvoditel, model, cena, kolichestvo)
+        self.sposob_pechati = sposob_pechati
+        self.cvet_pуchat = cvet_pуchat
+
+class Scaner(Orgtehnika):
+    tip_scanera: str
+    razreshenie: str
+
+    def __init__(self, naimenovanie, proizvoditel, model, cena, kolichestvo, tip_scanera, razreshenie):
+        super().__init__(naimenovanie, proizvoditel, model, cena, kolichestvo)
+        self.tip_scanera = tip_scanera
+        self.razreshenie = razreshenie
+
+class Xerox(Orgtehnika):
+    razreshenie: str
+    duplex: str   # есть /нет двустроннее копирование
+    def __init__(self, naimenovanie, proizvoditel, model, cena, kolichestvo, duplex, razreshenie):
+        super().__init__(naimenovanie, proizvoditel, model, cena, kolichestvo)
+        self.duplex = duplex
+        self.razreshenie = razreshenie
