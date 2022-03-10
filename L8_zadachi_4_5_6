@@ -56,9 +56,7 @@ class Xerox(Orgtehnika):
 class Sklad:
     orgtehnika: dict
     kolichestvo: int
-    # printery: dict
-    # skanery: dict
-    # xeroxy: dict
+    
 
     def __init__(self, orgtehnika, kolichestvo=0):
         self.orgtehnika = orgtehnika
@@ -76,4 +74,7 @@ class Magazin:
 
 sklad = Sklad()
 magazin = Magazin()
+p = Printer("Принтер", "HP", "C4587", 3000, "лазерный", "цветная печать")
+s = Scaner("Сканер", "Epson", "HY898", 5000, "планшетный", "1200 dpi")
+x = Xerox("Копировальный аппарат", "Canon", "YHd56221", 10000, "двустороняя печать", "4800×1200 dpi")
 
